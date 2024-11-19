@@ -9,7 +9,9 @@
     "development",
     "kit",
     "service",
-    "directive"
+    "directive",
+    "pipe",
+    "utils"
   ],
   "homepage": "https://krai-kit.dev/en/docs/getting-started",
   "repository": "https://github.com/krai-tech/krai-kit",
