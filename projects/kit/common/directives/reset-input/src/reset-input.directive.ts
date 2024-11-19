@@ -262,7 +262,9 @@ export class ResetInputDirective implements OnInit, AfterViewInit, OnDestroy {
   private addPaddingToInput(): void {
     const hasChevron = hasAdjacentClasses(this.elRef.nativeElement, ['kri-chevron'])
     this.renderer.setStyle(this.elRef.nativeElement, 'padding-right', `${hasChevron ? 85 : 30}px`);
-    this.renderer.setStyle(this.container, 'margin-right', `${hasChevron ? 30 : 0}px`);
+    if (this.container) {
+      this.renderer.setStyle(this.container, 'margin-right', `${hasChevron ? 30 : 0}px`);
+    }
   }
 
   /**
