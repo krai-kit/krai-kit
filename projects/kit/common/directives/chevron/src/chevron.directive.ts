@@ -12,7 +12,7 @@ import {
 import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
 import { ChevronDirection } from './chevron-direction.type';
 import { IconComponent } from '@krai-tech/kit/icon';
-import { DROPDOWN } from '../../dropdown/src';
+import { DROPDOWN } from '@krai-tech/kit/common/directives/dropdown';
 
 /**
  * Token factory for the `ChevronDirective`, used to create a unique and injectable instance of the directive.

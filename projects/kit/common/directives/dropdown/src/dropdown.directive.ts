@@ -1,7 +1,7 @@
 import { computed, Directive, ElementRef, inject, input, OnInit, Renderer2, signal } from '@angular/core';
-import { DropdownStatus } from './status.enum';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { createTokenFactory, provide } from '@krai-tech/cdk/utils';
+import { DropdownStatus } from './status.enum';
 
 export const DROPDOWN = createTokenFactory(() => new DropdownDirective());
 
