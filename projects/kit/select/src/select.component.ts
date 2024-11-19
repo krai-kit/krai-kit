@@ -24,6 +24,9 @@ import { FilterByPipe, LimitToPipe } from './pipes';
 import { config as defaultConfig } from './select.config';
 import { FocusDirective } from '@krai-tech/cdk/directives/focus';
 import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-input';
+import { ChevronDirective } from '@krai-tech/kit/common/directives/chevron';
+import { DROPDOWN } from '@krai-tech/kit/common/directives/dropdown';
+import { DropdownFacadeService } from './services/dropdown-facade.service';
 
 /**
  * `SelectComponent` is a custom select dropdown component.
@@ -39,7 +42,7 @@ import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-inpu
   standalone: true,
   imports : [
     CommonModule, FormsModule, FilterByPipe, LimitToPipe, InputTextDirective, CheckboxComponent, FocusDirective,
-    ResetInputDirective, InputTextLabelDirective
+    ResetInputDirective, InputTextLabelDirective, ChevronDirective
   ],
   host: {
     '(click)': 'state.clickedInside.set(true)',
@@ -63,6 +66,10 @@ import { ResetInputDirective } from '@krai-tech/kit/common/directives/reset-inpu
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => SelectComponent),
       multi: true
+    },
+    {
+      provide: DROPDOWN,
+      useClass: DropdownFacadeService
     },
     SelectService,
     SelectStateService
